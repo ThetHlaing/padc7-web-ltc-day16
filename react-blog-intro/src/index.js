@@ -52,6 +52,7 @@ class App extends React.Component {
 
   addNewArticleEvent = article => {
     const articles = this.state.articles;
+    article.id = articles.length + 1;
     article.created_by = this.state.user.id;
     console.log(article);
     articles.push(article);
@@ -144,10 +145,11 @@ class App extends React.Component {
         />
 
         <Route
-          path="/article/:id"
+          path="/articles/:id"
           exact
           render={props => (
             <ArticleDetail
+              {...props}
               articles={this.state.articles}
               users={this.state.users}
             />

@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, state) => ({
   //Dispatch an action to toggle the clicked item
-  toggleTodo: index => dispatch()
+  toggleTodo: index => dispatch({type: 'TOGGLE_TODO', id: index})
 });
 
 class List extends React.Component {
